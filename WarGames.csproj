@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52082A42-9CA8-4DE1-A695-5E32B0DE4E53}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WarGames</RootNamespace>
+    <AssemblyName>WarGames</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="sfmlnet-audio-2">
+      <HintPath>..\..\..\..\Devolpment\SFML.Net-2.1\lib\sfmlnet-audio-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-graphics-2">
+      <HintPath>..\..\..\..\Devolpment\SFML.Net-2.1\lib\sfmlnet-graphics-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-window-2">
+      <HintPath>..\..\..\..\Devolpment\SFML.Net-2.1\lib\sfmlnet-window-2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="core\Game.cs" />
+    <Compile Include="core\Input.cs" />
+    <Compile Include="core\Program.cs" />
+    <Compile Include="core\Assets.cs" />
+    <Compile Include="handlers\InterfaceHandler.cs" />
+    <Compile Include="interfaces\IScreen.cs" />
+    <Compile Include="objects\data\gameinterface\AttackButton.cs" />
+    <Compile Include="objects\data\gameinterface\Bar.cs" />
+    <Compile Include="objects\data\DataMaster.cs" />
+    <Compile Include="objects\data\gameinterface\HealthBar.cs" />
+    <Compile Include="objects\data\gameinterface\MoveButton.cs" />
+    <Compile Include="objects\data\Pathfinder.cs" />
+    <Compile Include="objects\data\units\Infantery.cs" />
+    <Compile Include="objects\data\gameinterface\InterfaceBar.cs" />
+    <Compile Include="objects\data\units\Item.cs" />
+    <Compile Include="objects\data\map\Map.cs" />
+    <Compile Include="handlers\UnitHandler.cs" />
+    <Compile Include="objects\data\gameinterface\UnitPictureBox.cs" />
+    <Compile Include="objects\data\units\Tank.cs" />
+    <Compile Include="objects\data\units\weapons\M1Garand.cs" />
+    <Compile Include="objects\data\units\weapons\Weapon.cs" />
+    <Compile Include="objects\renderers\gameinterface\AttackButtonRenderer.cs" />
+    <Compile Include="objects\renderers\gameinterface\BarRenderer.cs" />
+    <Compile Include="objects\data\gameinterface\Button.cs" />
+    <Compile Include="objects\renderers\gameinterface\ButtonRenderer.cs" />
+    <Compile Include="objects\renderers\gameinterface\HealthBarRenderer.cs" />
+    <Compile Include="objects\renderers\gameinterface\MoveButtonRenderer.cs" />
+    <Compile Include="objects\renderers\units\InfanteryRenderer.cs" />
+    <Compile Include="objects\renderers\gameinterface\InterfaceBarRenderer.cs" />
+    <Compile Include="objects\renderers\map\MapRenderer.cs" />
+    <Compile Include="objects\renderers\MasterRenderer.cs" />
+    <Compile Include="objects\renderers\map\TileRenderer.cs" />
+    <Compile Include="objects\data\units\Stats.cs" />
+    <Compile Include="objects\data\map\Tile.cs" />
+    <Compile Include="objects\data\units\Unit.cs" />
+    <Compile Include="objects\renderers\gameinterface\UnitPictureBoxRenderer.cs" />
+    <Compile Include="objects\renderers\units\TankRenderer.cs" />
+    <Compile Include="objects\renderers\units\UnitRenderer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="screens\CombatScreen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="resources\fonts\arial.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="resources\fonts\arialbd.ttf" />
+    <None Include="resources\fonts\arialbi.ttf" />
+    <None Include="resources\fonts\ariali.ttf" />
+    <None Include="resources\fonts\ARIALN.TTF" />
+    <None Include="resources\fonts\ARIALNB.TTF" />
+    <None Include="resources\fonts\ARIALNBI.TTF" />
+    <None Include="resources\fonts\ARIALNI.TTF" />
+    <None Include="resources\fonts\ariblk.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="csfml-audio-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-graphics-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="csfml-window-2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libsndfile-1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="openal32.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\Infantry.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\Tank_Sherman.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
